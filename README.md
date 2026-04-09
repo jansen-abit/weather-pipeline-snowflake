@@ -2,10 +2,14 @@
 
 End-to-end data pipeline ingesting NOAA weather forecast data through a medallion architecture (RAW → CLEAN → SERVING) in Snowflake, with a published Snowsight dashboard.
 
-**Portfolio Project 07 — Phase 1, Item 2**
-[← Back to Portfolio](https://jansenabit.github.io)
+**Portfolio Project 02 — Phase 1, Open Source**
+[← Back to Portfolio](https://jansen-abit.github.io)
 
 ---
+
+## Dashboard
+
+![Snowflake Dashboard](images/dashboard.png)
 
 ## Architecture
 
@@ -43,7 +47,7 @@ NOAA Weather API (`api.weather.gov`) — 7-day forecasts for four US cities:
 - New York, NY
 - Seattle, WA
 
-Data was originally ingested and transformed in Databricks (see [Phase 1 — Databricks](https://github.com/jansenabit/weather-pipeline-databricks)), then exported from the Silver layer as JSON and loaded into Snowflake via an internal stage.
+Data was originally ingested and transformed in Databricks (see [Phase 1 — Databricks](https://github.com/jansen-abit/weather-pipeline-databricks)), then exported from the Silver layer as JSON and loaded into Snowflake via an internal stage.
 
 > **Why export from Databricks instead of calling the API directly?**
 > Snowflake trial accounts do not support External Access Integrations, which are required for outbound HTTP calls. This constraint led to a cross-platform data transfer pattern — a realistic scenario in production environments where teams migrate or replicate data between systems.
